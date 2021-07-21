@@ -89,6 +89,7 @@ GameObject:
   - component: {fileID: 3014474268597659084}
   - component: {fileID: 1884692952}
   - component: {fileID: 1162834735924077676}
+  - component: {fileID: 3268065878292307648}
   m_Layer: 5
   m_Name: cell
   m_TagString: Untagged
@@ -137,7 +138,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   m_Material: {fileID: 0}
-  m_Color: {r: 1, g: 1, b: 1, a: 1}
+  m_Color: {r: 1, g: 1, b: 1, a: 0.32941177}
   m_RaycastTarget: 1
   m_Maskable: 1
   m_OnCullStateChanged:
@@ -186,7 +187,7 @@ BoxCollider2D:
   m_IsTrigger: 1
   m_UsedByEffector: 0
   m_UsedByComposite: 0
-  m_Offset: {x: -213, y: -937.75}
+  m_Offset: {x: -413, y: -937.75}
   m_SpriteTilingProperty:
     border: {x: 0, y: 0, z: 0, w: 0}
     pivot: {x: 0, y: 0}
@@ -237,7 +238,7 @@ LineRenderer:
   m_LightmapParameters: {fileID: 0}
   m_SortingLayerID: 0
   m_SortingLayer: 0
-  m_SortingOrder: 0
+  m_SortingOrder: 2
   m_Positions:
   - {x: 0, y: 0, z: 0}
   - {x: 0, y: 0, z: 1}
@@ -312,10 +313,19 @@ MonoBehaviour:
   cellColor: 0
   nodeType: 0
   isEdgeNode: 0
-  top: {fileID: 0}
-  bottom: {fileID: 0}
-  left: {fileID: 0}
-  right: {fileID: 0}
-  childs: []
+  nodeID: -1
+  cellMaterial: {fileID: 0}
   rowID: -1
   colID: -1
+  pastNodeID: -1
+--- !u!210 &3268065878292307648
+SortingGroup:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 9170311091444763730}
+  m_Enabled: 1
+  m_SortingLayerID: 0
+  m_SortingLayer: 0
+  m_SortingOrder: 5

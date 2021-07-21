@@ -7,6 +7,7 @@ namespace SquareBlock {
     {
         public GameObject cellPrefab;
         public Sprite CellTexture;
+        public Material lineMaterial;
 
         private CellElements cellElement = new CellElements();
         private GameData gameData = null;
@@ -38,7 +39,7 @@ namespace SquareBlock {
 
         protected override void OnEvent(string eventName, params object[] _eventData)
         {
-            if (eventName == "StartGame1" && _eventData[0] != null)
+            if (eventName == "StartGame" && _eventData[0] != null)
             {
                 InitializeGameElements(_eventData[0] as GameData);
             }
@@ -73,6 +74,8 @@ namespace SquareBlock {
 
             cellElement.basePrefab = cellPrefab;
             cellElement.baseSprite = CellTexture;
+            cellElement.baseMaterial = lineMaterial;
+
             ListenerController.Instance.DispatchEvent("PlotGrid", cellElement);
 
         }

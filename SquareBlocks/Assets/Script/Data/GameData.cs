@@ -20,11 +20,14 @@ namespace SquareBlock
         public bool isEdgeNode;
         public string nodeColor;
         public NodeType nodeType;
+        public Material nodeMaterial;
+
     }
     public class CellElements
     {
         public Sprite baseSprite;
         public GameObject basePrefab;
+        public Material baseMaterial;
     }
 
     [System.Serializable]

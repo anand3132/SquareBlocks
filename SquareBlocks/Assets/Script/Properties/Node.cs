@@ -15,6 +15,7 @@ namespace SquareBlock {
         public NodeType nodeType;
         public bool isEdgeNode;
         public int nodeID=-1;
+        public Material cellMaterial;
 
         private LineRenderer lineRenderer;
 
@@ -37,16 +38,11 @@ namespace SquareBlock {
         public override void RegisterEvents()
         {
             ListenerController.Instance.RegisterObserver("UpdateAllCells", this);
-            ListenerController.Instance.RegisterObserver("OnDragBegin", this);
-
-
         }
 
         public override void UnRegisterEvents()
         {
             ListenerController.Instance.UnRegisterObserver("UpdateAllCells", this);
-
-
         }
 
         protected override void OnEvent(string eventName, params object[] _eventData)
@@ -71,43 +67,43 @@ namespace SquareBlock {
                 GameObject obj = eventData.pointerCurrentRaycast.gameObject;
                 if(obj.GetComponent<Node>())
                     ListenerController.Instance.DispatchEvent("OnDragBegin", obj);
+                float scaleSpeed = 0.2f;
+
+                var rect = this.GetComponent<RectTransform>();
+                var sequence = DOTween.Sequence().Join(
+                                rect.DOPunchScale(new Vector3(0.5f, 0.5f, 0.5f), scaleSpeed, 2, 1f));
+                sequence.SetLoops(1, LoopType.Yoyo);
             }
         }
-                
-           //     float rotationSpeed = 20.0f;
-           //     float scaleSpeed = 0.2f;
-           //     var rect = this.GetComponent<RectTransform>();
-           //     var sequence = DOTween.Sequence()
-           ////.Append(rect.DOLocalRotate(new Vector3(0, 0, 360), rotationSpeed, RotateMode.FastBeyond360).SetRelative())
-           //.Join(rect.DOPunchScale(new Vector3(0.5f, 0.5f, 0.5f), scaleSpeed, 2, 1f));
-           //     sequence.SetLoops(1, LoopType.Yoyo);
+
+        //     float rotationSpeed = 20.0f;
+        //     float scaleSpeed = 0.2f;
+        //     var rect = this.GetComponent<RectTransform>();
+        //     var sequence = DOTween.Sequence()
+        ////.Append(rect.DOLocalRotate(new Vector3(0, 0, 360), rotationSpeed, RotateMode.FastBeyond360).SetRelative())
+        //.Join(rect.DOPunchScale(new Vector3(0.5f, 0.5f, 0.5f), scaleSpeed, 2, 1f));
+        //     sequence.SetLoops(1, LoopType.Yoyo);
 
 
-           //     linePositions = new Vector3[2];
-           //     linePositions[0] = transform.position;
-           //     Vector3 worldPosition = Camera.main.ScreenToWorldPoint(eventData.position);
-           //     linePositions[1] = worldPosition;
-           //     DrawLines(linePositions);
+        //     linePositions = new Vector3[2];
+        //     linePositions[0] = transform.position;
+        //     Vector3 worldPosition = Camera.main.ScreenToWorldPoint(eventData.position);
+        //     linePositions[1] = worldPosition;
+        //     DrawLines(linePositions);
         //    }
         //}
-
+        public int pastNodeID = -1;
         public void OnDrag(PointerEventData eventData)
         {
-
-           
-
-            ////linePositions = new Vector3[2];
-            //linePositions[0] = transform.position;
-            //linePositions[0].z = 0;
-            //Vector3 worldPosition = Camera.main.ScreenToWorldPoint(eventData.position);
-            //worldPosition.z = 0;
-            //linePositions[1] = worldPosition;
-            //DrawLines(linePositions);
-            ////Debug.Log("ID : \n" + eventData.pointerCurrentRaycast.gameObject.GetComponent<Node>().nodeID.ToString());
-
-            //Debug.Log("<color=red>OnDrag</color> rowID: " + rowID + "   colID: " + colID);
-            //Debug.Log("<color=green>---------------------------------------</color>");
-
+            GameObject currentNodeOnDrag = eventData.pointerCurrentRaycast.gameObject;
+            if (!currentNodeOnDrag.GetComponent<Node>())
+                return;
+            int currentNodeID = currentNodeOnDrag.GetComponent<Node>().nodeID;
+            if (pastNodeID!= currentNodeID)
+            {
+                ListenerController.Instance.DispatchEvent("OnDrag", currentNodeOnDrag);
+                pastNodeID = currentNodeID;
+            }
         }
 
         public void OnEndDrag(PointerEventData eventData)
@@ -115,12 +111,14 @@ namespace SquareBlock {
             if (this.isEdgeNode)
             {
                 GameObject obj = eventData.pointerCurrentRaycast.gameObject;
-                if (obj.GetComponent<Node>())
+                if (obj.GetComponent<Node>() && obj.GetComponent<Node>().isEdgeNode)
+                {
                     ListenerController.Instance.DispatchEvent("OnDragEnd", obj);
+                    return;
+                }
 
             }
-            else
-                ListenerController.Instance.DispatchEvent("OnDragEnd", null);
+            ListenerController.Instance.DispatchEvent("OnDragEnd", null);
 
         }
     }
