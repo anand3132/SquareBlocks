@@ -52,29 +52,29 @@ namespace SquareBlock {
                 currentNode.nodeID = itr;
                 currentNode.isEdgeNode = GNodeData[itr].isEdgeNode;
                 currentNode.nodeType = GNodeData[itr].nodeType;
-                currentNode.cellColor = GNodeData[itr].nodeColor;
-                currentNode.cellMaterial = Cell.baseMaterial;
+                currentNode.nodeColor = GNodeData[itr].nodeColor;
+                currentNode.nodeMaterial = Cell.baseMaterial;
 
 
-                currentNode.rowID = row;
-                currentNode.colID = col;
+                //currentNode.rowID = row;
+                //currentNode.colID = col;
 
                 if (currentNode.isEdgeNode)
                 {
                     currentNode.GetComponent<Image>().sprite = Cell.baseSprite;
                     Color _color;
-                    ColorUtility.TryParseHtmlString(currentNode.cellColor, out _color);
+                    ColorUtility.TryParseHtmlString(currentNode.nodeColor, out _color);
 
                     if (_color != null)
                     {
                         currentNode.GetComponent<Image>().color = _color;
-                        if(currentNode.cellMaterial)
-                            currentNode.cellMaterial.color = _color;
+                        if(currentNode.nodeMaterial)
+                            currentNode.nodeMaterial.color = _color;
 
                     }
                     else
                     {
-                        Debug.Log("Not a valid Color: " + currentNode.cellColor.ToString());
+                        Debug.Log("Not a valid Color: " + currentNode.nodeColor.ToString());
                     }
                 }
             }
@@ -94,22 +94,28 @@ namespace SquareBlock {
         //private void DrawLines(Vector3[] vertexPositions, LineRenderer lineRenderer)
         private void DrawLines(List<GameObject> currentEdgeList)
         {
+            Node startNode = currentEdgeList[0].GetComponent<Node>();
             LineRenderer lineRenderer = currentEdgeList[0].GetComponent<LineRenderer>();
+
             Vector3[] vertexPositions = new Vector3[currentEdgeList.Count];
 
-            for(int i=0;i<currentEdgeList.Count;i++)
+            for (int i = 0; i < currentEdgeList.Count; i++)
             {
-                vertexPositions[i] = currentEdgeList[i].transform.position;
+                Node currentNode = currentEdgeList[i].GetComponent<Node>();
+                vertexPositions[i] = currentEdgeList[i].transform.GetChild(0).position;
+                currentNode.nodeStatus = startNode.nodeType;
+                currentEdgeList[i].GetComponent<Image>().color = startNode.GetComponent<Image>().color;
             }
 
             lineRenderer.loop = false;
-            lineRenderer.startWidth = 0.1f;
-            lineRenderer.endWidth = 0.1f;
+            lineRenderer.startWidth = 0.3f;
+            lineRenderer.endWidth = 0.3f;
             lineRenderer.positionCount = currentEdgeList.Count;
 
             lineRenderer.numCapVertices = 10;
             lineRenderer.numCornerVertices = 10;
             //lineRenderer.sortingOrder = 3;
+            lineRenderer.material = startNode.nodeMaterial;
             lineRenderer.sortingLayerName = "Foreground";
             lineRenderer.SetPositions(vertexPositions);
             Debug.Log("<color=blue> Drawing Color </color>");
@@ -138,7 +144,7 @@ namespace SquareBlock {
 
         }
         public List<GameObject> currentVectorList = new List<GameObject>();
-        private int openNodeID = -1;
+        private Node openNode = null;
         protected override void OnEvent(string eventName, params object[] _eventData)
         {
             if (eventName == "InitializeGameElements" && _eventData[0] != null)
@@ -153,20 +159,26 @@ namespace SquareBlock {
             {
                 if (currentVectorList.Count > 0)
                 {
-                    openNodeID = -1;
+                    openNode = null;
                     currentVectorList.Clear();
                 }
                 GameObject obj = _eventData[0] as GameObject;
                 currentVectorList.Add(obj);
-                openNodeID = obj.GetComponent<Node>().nodeID;
+                openNode = obj.GetComponent<Node>();
             }
             if (eventName == "OnDrag" && _eventData[0] != null)
             {
                 GameObject obj = _eventData[0] as GameObject;
-                int currentNodeID = obj.GetComponent<Node>().nodeID;
+                Node currentNode = obj.GetComponent<Node>();
+                if (currentNode.nodeStatus != NodeType.MAX)
+                {
+                    currentVectorList.Clear();
+                    Debug.Log("<color=red>Line Crossing.....!! </color>");
+                    return;
+                }
                 foreach (var item in currentVectorList)
                 {
-                    if (item.GetComponent<Node>().nodeID == currentNodeID)
+                    if (item.GetComponent<Node>().nodeID == currentNode.nodeID)
                         return;
                 }
                 currentVectorList.Add(obj);
@@ -176,9 +188,8 @@ namespace SquareBlock {
                 if (_eventData != null && currentVectorList!=null && currentVectorList.Count>0)
                 {
                     GameObject obj = _eventData[0] as GameObject;
-                    obj = _eventData[0] as GameObject;
-
-                    if (openNodeID != obj.GetComponent<Node>().nodeID)
+                    Node currentNode = obj.GetComponent<Node>();
+                    if (openNode.nodeID != currentNode.nodeID && openNode.nodeType== currentNode.nodeType)
                     {
                         currentVectorList.Add(_eventData[0] as GameObject);
                         DrawLines(currentVectorList);

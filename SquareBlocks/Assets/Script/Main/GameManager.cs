@@ -1,6 +1,7 @@
 ﻿using System;
 using System.Collections;
 using System.Collections.Generic;
+using System.IO;
 using UnityEngine;
 namespace SquareBlock {
     public class GameManager :IController
@@ -10,7 +11,7 @@ namespace SquareBlock {
         public Material lineMaterial;
 
         private CellElements cellElement = new CellElements();
-        private GameData gameData = null;
+        public List<GameData> gdataList; //= new List<GameData>();
 
         private void Start()
         {
@@ -18,8 +19,26 @@ namespace SquareBlock {
             {
                 Debug.Log("<color=red>ListenerController Not Initiated !!! </color>");
             }
-            gameData = GameDataGenerator.Instance.GenerateGameData();
-            ListenerController.Instance.DispatchEvent("StartGame", gameData);
+            ListenerController.Instance.DispatchEvent("InitializeUIController");
+
+            string filePath = GameDataGenerator.Instance.GetGameDataFilePath();
+            if (File.Exists(filePath))
+            {
+                string JSONstring = File.ReadAllText(filePath);
+                gdataList = JsonParser.Deserialize(typeof(List<GameData>), JSONstring) as List<GameData>;
+                //gdataList = JsonUtility.FromJson<List<GameData>>(JSONstring);
+                if(gdataList!=null&& gdataList.Count>0)
+                {
+                    ListenerController.Instance.DispatchEvent("UpdateGameData", gdataList);
+                    return;
+                }
+            }
+                GameData gdata = GameDataGenerator.Instance.GenerateGameData(3);
+                gdataList.Add(gdata);
+                ListenerController.Instance.DispatchEvent("UpdateGameData", gdataList);
+                Debug.Log("<color=blue>--------------------------------</color>");
+                Debug.Log("<color=blue>Generating New Game Data</color>");
+                Debug.Log("<color=blue>--------------------------------</color>");
         }
         public override void RegisterEvents()
         {

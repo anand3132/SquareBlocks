@@ -10,17 +10,17 @@ namespace SquareBlock {
     {
         private Grid grid;
 
-        public Sprite cellSprite;
-        public string cellColor;
+        public Sprite nodeSprite;
+        public string nodeColor;
         public NodeType nodeType;
         public bool isEdgeNode;
         public int nodeID=-1;
-        public Material cellMaterial;
-
+        public Material nodeMaterial;
+        public NodeType nodeStatus = NodeType.MAX;
         private LineRenderer lineRenderer;
 
-        public int rowID = -1;
-        public int colID = -1;
+        //public int rowID = -1;
+        //public int colID = -1;
 
         Vector3 startPos = Vector3.zero;
         Vector3[] linePositions = null;
@@ -60,21 +60,6 @@ namespace SquareBlock {
             }
         }
 
-        public void OnBeginDrag(PointerEventData eventData)
-        {
-            if (this.isEdgeNode)
-            {
-                GameObject obj = eventData.pointerCurrentRaycast.gameObject;
-                if(obj.GetComponent<Node>())
-                    ListenerController.Instance.DispatchEvent("OnDragBegin", obj);
-                float scaleSpeed = 0.2f;
-
-                var rect = this.GetComponent<RectTransform>();
-                var sequence = DOTween.Sequence().Join(
-                                rect.DOPunchScale(new Vector3(0.5f, 0.5f, 0.5f), scaleSpeed, 2, 1f));
-                sequence.SetLoops(1, LoopType.Yoyo);
-            }
-        }
 
         //     float rotationSpeed = 20.0f;
         //     float scaleSpeed = 0.2f;
@@ -92,6 +77,22 @@ namespace SquareBlock {
         //     DrawLines(linePositions);
         //    }
         //}
+        public void OnBeginDrag(PointerEventData eventData)
+        {
+            if (this.isEdgeNode)
+            {
+                GameObject obj = eventData.pointerCurrentRaycast.gameObject;
+                if (obj.GetComponent<Node>())
+                    ListenerController.Instance.DispatchEvent("OnDragBegin", obj);
+                float scaleSpeed = 0.2f;
+
+                var rect = this.GetComponent<RectTransform>();
+                var sequence = DOTween.Sequence().Join(
+                                rect.DOPunchScale(new Vector3(0.5f, 0.5f, 0.5f), scaleSpeed, 2, 1f));
+                sequence.SetLoops(1, LoopType.Yoyo);
+            }
+        }
+
         public int pastNodeID = -1;
         public void OnDrag(PointerEventData eventData)
         {
