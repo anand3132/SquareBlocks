@@ -406,12 +406,12 @@ RectTransform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 5111539296306412578}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: -17280}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
   - {fileID: 2108334463342949296}
   m_Father: {fileID: 1614558955450936582}
-  m_RootOrder: 0
+  m_RootOrder: 2
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
   m_AnchorMax: {x: 1, y: 1}
@@ -708,7 +708,7 @@ RectTransform:
   m_Children:
   - {fileID: 1614558954822281586}
   m_Father: {fileID: 1614558955450936582}
-  m_RootOrder: 1
+  m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
   m_AnchorMax: {x: 1, y: 1}
@@ -1408,7 +1408,7 @@ RectTransform:
   m_Children:
   - {fileID: 1614558955826086676}
   m_Father: {fileID: 1614558955450936582}
-  m_RootOrder: 2
+  m_RootOrder: 1
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
   m_AnchorMax: {x: 1, y: 1}
@@ -2029,9 +2029,9 @@ RectTransform:
   m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 0, y: 0, z: 0}
   m_Children:
-  - {fileID: 1202238010664326559}
   - {fileID: 1614558954597983062}
   - {fileID: 1614558955219926173}
+  - {fileID: 1202238010664326559}
   - {fileID: 1614558955150555969}
   m_Father: {fileID: 1614558955716749393}
   m_RootOrder: 0
@@ -3124,7 +3124,7 @@ Canvas:
   m_OverridePixelPerfect: 0
   m_SortingBucketNormalizedSize: 0
   m_AdditionalShaderChannelsFlag: 25
-  m_SortingLayerID: 0
+  m_SortingLayerID: -542019533
   m_SortingOrder: 100
   m_TargetDisplay: 0
 --- !u!1 &3435253024729556014
@@ -3139,6 +3139,7 @@ GameObject:
   - component: {fileID: 6496970058685583011}
   - component: {fileID: 3041977756608938214}
   - component: {fileID: 3435253024729556013}
+  - component: {fileID: 3435253024729556015}
   m_Layer: 5
   m_Name: TossMessegePanel
   m_TagString: Untagged
@@ -3146,6 +3147,23 @@ GameObject:
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
+--- !u!114 &3435253024729556015
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3435253024729556014}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: dc42784cf147c0c48a680349fa168899, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_IgnoreReversedGraphics: 1
+  m_BlockingObjects: 0
+  m_BlockingMask:
+    serializedVersion: 2
+    m_Bits: 4294967295
 --- !u!222 &3590202056147630890
 CanvasRenderer:
   m_ObjectHideFlags: 0
@@ -3974,8 +3992,8 @@ MonoBehaviour:
   ScreenID: 0
   msgText: {fileID: 5365265727158899406}
   TossStartDelay: 0
-  TossEndDelay: 2
-  RetryButton: {fileID: 0}
+  TossEndDelay: 10
+  RecoveryButton: {fileID: 5365265728314860453}
   rt: {fileID: 0}
   txt: {fileID: 0}
 --- !u!114 &8721314691867142295

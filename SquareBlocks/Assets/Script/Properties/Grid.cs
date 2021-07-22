@@ -167,7 +167,7 @@ namespace SquareBlock {
             {
                 GameObject obj = _eventData[0] as GameObject;
                 Node currentNode = obj.GetComponent<Node>();
-
+                obj.transform.localScale = Vector3.one;
                 float scaleSpeed = 0.2f;
 
                 var rect = currentNode.GetComponent<RectTransform>();
@@ -175,11 +175,15 @@ namespace SquareBlock {
                                 rect.DOPunchScale(new Vector3(0.5f, 0.5f, 0.5f), scaleSpeed, 2, 1f));
                 sequence.SetLoops(1, LoopType.Yoyo);
 
-                if (currentNode.nodeStatus != NodeType.MAX && currentNode.nodeStatus != currentVectorList[0].GetComponent<Node>().nodeType) 
-                {
+                if ((currentNode.isEdgeNode ==true&& currentNode.nodeType!=openNode.nodeType)|| (currentNode.nodeStatus != NodeType.MAX)) {
+                   
+                    
                     currentVectorList.Clear();
                     Debug.Log("<color=red>Line Crossing.....!! </color>");
-                    ListenerController.Instance.DispatchEvent("TossMessage", "Line Crossing !!!");
+                    //UIController.Instance.ToastMsg("ilegal Line Crossing !!!");
+                    UIController.Instance.LockUI("ilegal Line Crossing !!!");
+
+                    //ListenerController.Instance.DispatchEvent("StopGame");
                     return;
                 }
 

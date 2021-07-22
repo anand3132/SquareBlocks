@@ -13,7 +13,7 @@ namespace SquareBlock
         {
             UIController.Instance.SwitchScreenTo(typeof(MenuScreen));
             ListenerController.Instance.DispatchEvent("UpdateMenuScreen");
-            ListenerController.Instance.DispatchEvent("TossMessage", "Hi Welcome to SquareBlocks");
+            UIController.Instance.ToastMsg("Hi Welcome to SquareBlocks");
         }
 
     }

@@ -6,15 +6,14 @@ using UnityEngine;
 using DG.Tweening;
 
 namespace SquareBlock {
-    public class Node : IProprties,IBeginDragHandler,IDragHandler,IEndDragHandler
-    {
+    public class Node : IProprties, IBeginDragHandler, IDragHandler, IEndDragHandler {
         private Grid grid;
 
         public Sprite nodeSprite;
         public string nodeColor;
         public NodeType nodeType;
         public bool isEdgeNode;
-        public int nodeID=-1;
+        public int nodeID = -1;
         public Material nodeMaterial;
         public NodeType nodeStatus = NodeType.MAX;
         private LineRenderer lineRenderer;
@@ -23,9 +22,7 @@ namespace SquareBlock {
         //public int colID = -1;
 
         Vector3 startPos = Vector3.zero;
-        Vector3[] linePositions = null;
-        void DrawLines(Vector3[] vertexPositions)
-        {
+        void DrawLines(Vector3[] vertexPositions) {
             lineRenderer.loop = false;
             lineRenderer.startWidth = 0.05f;
             lineRenderer.endWidth = 0.05f;
@@ -35,52 +32,28 @@ namespace SquareBlock {
             lineRenderer.numCornerVertices = 10;
         }
 
-        public override void RegisterEvents()
-        {
+        public override void RegisterEvents() {
             ListenerController.Instance.RegisterObserver("UpdateAllCells", this);
         }
 
-        public override void UnRegisterEvents()
-        {
+        public override void UnRegisterEvents() {
             ListenerController.Instance.UnRegisterObserver("UpdateAllCells", this);
         }
 
-        protected override void OnEvent(string eventName, params object[] _eventData)
-        {
-            if (eventName == "UpdateAllCells")
-            {
-                Debug.Log("Updating Cell Data : <color=green>"+ nodeID + " </color>");
+        protected override void OnEvent(string eventName, params object[] _eventData) {
+            if (eventName == "UpdateAllCells") {
+                Debug.Log("Updating Cell Data : <color=green>" + nodeID + " </color>");
                 grid = GetComponentInParent<Grid>();
                 this.lineRenderer = GetComponent<LineRenderer>();
-                if (this.lineRenderer == null)
-                {
-                    this.lineRenderer= gameObject.AddComponent<LineRenderer>();
+                if (this.lineRenderer == null) {
+                    this.lineRenderer = gameObject.AddComponent<LineRenderer>();
                 }
 
             }
         }
 
-
-        //     float rotationSpeed = 20.0f;
-        //     float scaleSpeed = 0.2f;
-        //     var rect = this.GetComponent<RectTransform>();
-        //     var sequence = DOTween.Sequence()
-        ////.Append(rect.DOLocalRotate(new Vector3(0, 0, 360), rotationSpeed, RotateMode.FastBeyond360).SetRelative())
-        //.Join(rect.DOPunchScale(new Vector3(0.5f, 0.5f, 0.5f), scaleSpeed, 2, 1f));
-        //     sequence.SetLoops(1, LoopType.Yoyo);
-
-
-        //     linePositions = new Vector3[2];
-        //     linePositions[0] = transform.position;
-        //     Vector3 worldPosition = Camera.main.ScreenToWorldPoint(eventData.position);
-        //     linePositions[1] = worldPosition;
-        //     DrawLines(linePositions);
-        //    }
-        //}
-        public void OnBeginDrag(PointerEventData eventData)
-        {
-            if (this.isEdgeNode)
-            {
+        public void OnBeginDrag(PointerEventData eventData) {
+            if (this.isEdgeNode) {
                 GameObject obj = eventData.pointerCurrentRaycast.gameObject;
                 if (obj.GetComponent<Node>())
                     ListenerController.Instance.DispatchEvent("OnDragBegin", obj);
@@ -94,32 +67,27 @@ namespace SquareBlock {
         }
 
         public int pastNodeID = -1;
-        public void OnDrag(PointerEventData eventData)
-        {
+        public void OnDrag(PointerEventData eventData) {
             GameObject currentNodeOnDrag = eventData.pointerCurrentRaycast.gameObject;
-            if (!currentNodeOnDrag.GetComponent<Node>())
+            if (currentNodeOnDrag == null || !currentNodeOnDrag.GetComponent<Node>())
                 return;
             int currentNodeID = currentNodeOnDrag.GetComponent<Node>().nodeID;
-            if (pastNodeID!= currentNodeID)
-            {
+            if (pastNodeID != currentNodeID) {
                 ListenerController.Instance.DispatchEvent("OnDrag", currentNodeOnDrag);
                 pastNodeID = currentNodeID;
             }
         }
 
-        public void OnEndDrag(PointerEventData eventData)
-        {
-            if (this.isEdgeNode)
-            {
-                GameObject obj = eventData.pointerCurrentRaycast.gameObject;
-                if (obj.GetComponent<Node>() && obj.GetComponent<Node>().isEdgeNode)
-                {
+        public void OnEndDrag(PointerEventData eventData) {
+            GameObject obj = eventData.pointerCurrentRaycast.gameObject;
+
+            if (this.isEdgeNode && obj.GetComponent<Node>()) {
+                if (obj.GetComponent<Node>().isEdgeNode) {
                     ListenerController.Instance.DispatchEvent("OnDragEnd", obj);
                     return;
                 }
-
+                ListenerController.Instance.DispatchEvent("OnDragEnd", null);
             }
-            ListenerController.Instance.DispatchEvent("OnDragEnd", null);
 
         }
     }

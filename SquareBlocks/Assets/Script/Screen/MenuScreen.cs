@@ -9,7 +9,6 @@ namespace SquareBlock
     public class MenuScreen : UIScreen
     {
         public List<GameData> gdataList;
-        private GameData gameData = null;
         public GameObject menuCentralPanel;
         public GameObject gameSelectButton;
         public override void RegisterEvents()
@@ -71,7 +70,7 @@ namespace SquareBlock
             }
             if (gameData == null)
                 return;
-            UIController.Instance.SwitchScreenTo(typeof(GameScreen));
+            UIController.Instance.SwitchScreenTo(typeof(GameScreen),false);
             ListenerController.Instance.DispatchEvent("StartGame", gameData);
 
         }

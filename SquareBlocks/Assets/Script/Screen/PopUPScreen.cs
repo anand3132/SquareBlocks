@@ -14,7 +14,7 @@ namespace SquareBlock
 
         [Range(0f, 10f)]
         public float TossEndDelay;
-        public Button RetryButton;
+        public Button RecoveryButton;
 
 
         public RectTransform rt;
@@ -30,38 +30,55 @@ namespace SquareBlock
 
         public void Message(string message,bool lockUI=false)
         {
-            if (msgText != null && !OnLock)
+            if (msgText != null)
             {
+                if (OnLock) {
+                    LockUI(message);
+                }else
                 StartCoroutine(DisplayMessege(message));
             }
         }
 
         public void Message(string message,float toastStartDelay, float toastEndDelay, bool lockUI = false)
         {
-            if (msgText != null && !OnLock)
+            if (msgText != null )
             {
+                if(OnLock) {
+                    LockUI(message);
+                }else
                 StartCoroutine(DisplayMessege(message, toastStartDelay, toastEndDelay));
             }
         }
 
         private bool OnLock;
-        public  void LockUI(string msg)
+        public  void LockUI(string message)
         {
             OnLock = true;
             screenPanel.SetActive(true);
-            RetryButton.interactable = true;
+            if (RecoveryButton) {
+                RecoveryButton.interactable = true;
+                RecoveryButton.onClick.AddListener(()=>ReleaseUI());
+            }
+            screenPanel.GetComponent<Image>().enabled = true;
+            Color tmpc = screenPanel.GetComponent<Image>().color;
+            tmpc.a = 0;
+            screenPanel.GetComponent<Image>().color = tmpc;
             if (msgText != null)
-                msgText.text = msg;
+                msgText.text = message;
+            Debug.Log("<color=red>UI is onLock....</color>");
         }
 
         public void ReleaseUI()
         {
             OnLock = false;
             screenPanel.SetActive(false);
-            RetryButton.interactable = false;
+            if (RecoveryButton)
+                RecoveryButton.interactable = false;
 
             if (msgText != null)
                 msgText.text = "";
+            screenPanel.GetComponent<Image>().enabled = false;
+
         }
 
         private IEnumerator DisplayMessege(string msg)
@@ -84,16 +101,36 @@ namespace SquareBlock
             screenPanel.SetActive(false);
         }
 
-        public void RetryButtonOnClick()
-        {
-            //ListenerController.Instance.DispatchEvent("CheckInterNet");
-        }
-
         protected override void OnEvent(string eventName, params object[] _eventData)
         {
-            if (eventName == "TossMessage")
+            if (eventName == "TossMessage"&&_eventData !=null)
             {
-                Message((string)_eventData[0]);
+                switch (_eventData.Length) {
+                    case 0: {
+                        Message("No msg found");
+                        break;
+                    }
+                    case 1: {
+                        Message((string)_eventData[0]);
+                        break;
+                    }
+                    case 2: {
+                        Message((string)_eventData[0], (float)_eventData[1], 0);
+                        break;
+                    }
+                    case 3: {
+                        Message((string)_eventData[0], (float)_eventData[1], (float)_eventData[2]);
+                        break;
+                    }
+                    case 4: {
+                        Message((string)_eventData[0], (float)_eventData[1], (float)_eventData[2], (bool)_eventData[3]);
+                        break;
+                    }
+                    default: {
+                        Message("No msg found");
+                        break;
+                    }
+                }
             }
             if (eventName == "LockUIWithMessege")
             {

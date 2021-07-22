@@ -7,6 +7,18 @@ using UnityEngine.UI;
 
 namespace SquareBlock
 {
+    enum UIBehaviour {
+        MAX
+        , ACTICVE
+        , PASSIVE
+        , WARNING
+        , LOCK
+        , ERROR
+        , OPEAN
+        , CLOSE
+    }
+
+
     [Serializable]
     public class UIController : IController
     {
@@ -170,6 +182,22 @@ namespace SquareBlock
             return null;
         }
 
+        public void ToastMsg(string _msg) {
+
+            ListenerController.Instance.DispatchEvent("TossMessage", _msg);
+        }
+        public void ToastMsg(string _msg, float toastStartDelay,float toastEndDelay,bool lockUI=false) {
+
+            ListenerController.Instance.DispatchEvent("TossMessage", _msg, toastStartDelay, toastEndDelay, lockUI);
+        }
+        public void LockUI(string _msg) {
+
+            ListenerController.Instance.DispatchEvent("LockUIWithMessege", _msg);
+        }
+        public void Release(string _msg) {
+
+            ListenerController.Instance.DispatchEvent("ReleaseUIWithMessege", _msg);
+        }
         public void ResetAllScreens()
         {
             foreach (var item in screens)
