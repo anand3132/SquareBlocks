@@ -18,7 +18,7 @@ namespace SquareBlock
         , CLOSE
     }
 
-
+    //This class handles all the ui Behaviors 
     [Serializable]
     public class UIController : IController
     {
@@ -194,6 +194,7 @@ namespace SquareBlock
 
             ListenerController.Instance.DispatchEvent("LockUIWithMessege", _msg);
         }
+
         public void Release(string _msg) {
 
             ListenerController.Instance.DispatchEvent("ReleaseUIWithMessege", _msg);

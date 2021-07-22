@@ -6,7 +6,12 @@ using UnityEngine;
 using DG.Tweening;
 
 namespace SquareBlock {
-    public class Node : IProprties, IBeginDragHandler, IDragHandler, IEndDragHandler {
+    /// <summary>
+    /// This class consist of one node's properties and its user interface handlers 
+    /// it dispatch the user interaction, towards the grid were the data is processed 
+    /// </summary>
+
+    public class Node : IProperties, IBeginDragHandler, IDragHandler, IEndDragHandler {
         private Grid grid;
 
         public Sprite nodeSprite;
@@ -17,9 +22,6 @@ namespace SquareBlock {
         public Material nodeMaterial;
         public NodeType nodeStatus = NodeType.MAX;
         private LineRenderer lineRenderer;
-
-        //public int rowID = -1;
-        //public int colID = -1;
 
         Vector3 startPos = Vector3.zero;
         void DrawLines(Vector3[] vertexPositions) {

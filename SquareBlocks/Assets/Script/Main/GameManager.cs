@@ -4,6 +4,9 @@ using System.Collections.Generic;
 using System.IO;
 using UnityEngine;
 namespace SquareBlock {
+    /// <summary>
+    /// This class handle the whole game state logics as well as the game data
+    /// </summary>
     public class GameManager :IController
     {
         public GameObject cellPrefab;
@@ -13,33 +16,42 @@ namespace SquareBlock {
         private CellElements cellElement = new CellElements();
         public List<GameData> gdataList; //= new List<GameData>();
 
-        private void Start()
-        {
-            if(ListenerController.Instance==null)
-            {
+
+        private  void Start() {
+            if (ListenerController.Instance == null) {
                 Debug.Log("<color=red>ListenerController Not Initiated !!! </color>");
             }
             ListenerController.Instance.DispatchEvent("InitializeUIController");
 
-            string filePath = GameDataGenerator.Instance.GetGameDataFilePath();
-            if (File.Exists(filePath))
-            {
+            gdataList = CheckAndGetGameData();
+
+            if (gdataList != null && gdataList.Count > 0) {
+                ListenerController.Instance.DispatchEvent("UpdateGameData", gdataList);
+                return;
+            }
+            UIController.Instance.ToastMsg("Game Data Error!!");
+
+        }
+        /// <summary>
+        /// This method search for any existing game data if nothing found it will try to generate one
+        /// </summary>
+        /// <returns></returns>
+        public  List<GameData> CheckAndGetGameData() {
+            string filePath = System.IO.Path.Combine(Application.persistentDataPath, "SquareBlockData.json");
+
+            if (File.Exists(filePath)) {
                 string JSONstring = File.ReadAllText(filePath);
                 gdataList = JsonParser.Deserialize(typeof(List<GameData>), JSONstring) as List<GameData>;
-                //gdataList = JsonUtility.FromJson<List<GameData>>(JSONstring);
-                if(gdataList!=null&& gdataList.Count>0)
-                {
-                    ListenerController.Instance.DispatchEvent("UpdateGameData", gdataList);
-                    return;
-                }
             }
+            if (gdataList == null) {
                 gdataList = GameDataGenerator.Instance.GenerateGameDataList(10);
-
-                ListenerController.Instance.DispatchEvent("UpdateGameData", gdataList);
                 Debug.Log("<color=blue>--------------------------------</color>");
                 Debug.Log("<color=blue>Generating New Game Data</color>");
                 Debug.Log("<color=blue>--------------------------------</color>");
+            }
+            return gdataList;
         }
+
         public override void RegisterEvents()
         {
             ListenerController.Instance.RegisterObserver("StartGame", this);
@@ -63,10 +75,10 @@ namespace SquareBlock {
                 InitializeGameElements(_eventData[0] as GameData);
             }
             if (eventName == "StopGame" )
-            {  }
+            { 
+
+            }
         }
-
-
 
         private void InitializeGameElements(GameData gameData)
         {

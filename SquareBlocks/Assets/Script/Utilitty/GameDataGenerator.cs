@@ -6,6 +6,9 @@ using System.Linq;
 
 namespace SquareBlock
 {
+/// <summary>
+/// This is a Generator Class which is used to generate game data object  consit of random cirle placements
+/// </summary>
     [System.Serializable]
     public class GameDataGenerator
     {
@@ -24,27 +27,6 @@ namespace SquareBlock
                 }
             }
         }
-
-        string path= System.IO.Path.Combine(Application.persistentDataPath, "SquareBlockData.json");
-        private GameDataGenerator()
-        {
-            if (File.Exists(path))
-            {
-                Debug.Log("<color=green>File Found in " + path + "</color>");
-            }
-            else
-            {
-                Debug.Log("<color=blue>File Not Found in " + path + "</color>");
-
-            }
-        }
-
-        public string GetGameDataFilePath()
-        {
-            return path;
-        }
-
-        private static int gameDataGeneratorInstances = 0;
 
         [SerializeField]
         public List<GameData> GenerateGameDataList(int elements = 1)

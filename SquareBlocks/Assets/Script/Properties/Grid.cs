@@ -8,7 +8,7 @@ using UnityEngine.UI;
 
 namespace SquareBlock {
 
-    public class Grid : IProprties
+    public class Grid : IProperties
     {
         private GameObject CellObjects;
         private int GColumn;
@@ -53,10 +53,6 @@ namespace SquareBlock {
                 currentNode.nodeColor = GNodeData[itr].nodeColor;
                 currentNode.nodeMaterial = Cell.baseMaterial;
 
-
-                //currentNode.rowID = row;
-                //currentNode.colID = col;
-
                 if (currentNode.isEdgeNode)
                 {
                     currentNode.GetComponent<Image>().sprite = Cell.baseSprite;
@@ -85,7 +81,6 @@ namespace SquareBlock {
         }
 
         //------------------------------------------------------------------------------------------------
-        //private void DrawLines(Vector3[] vertexPositions, LineRenderer lineRenderer)
         private void DrawLines(List<GameObject> currentEdgeList)
         {
             Node startNode = currentEdgeList[0].GetComponent<Node>();
@@ -115,7 +110,6 @@ namespace SquareBlock {
             lineRenderer.SetPositions(vertexPositions);
             Debug.Log("<color=blue> Drawing Color </color>");
         }
-
         //------------------------------------------------------------------------------------------------
         public override void RegisterEvents()
         {

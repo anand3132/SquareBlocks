@@ -59,6 +59,6 @@ namespace SquareBlock {
     
     }
 
-    public abstract class IProprties : ObBase {
+    public abstract class IProperties : ObBase {
     }
 }//SquareBlock
