@@ -1,0 +1,1387 @@
+[
+    {
+        "gridWidth": 5,
+        "gridHeight": 5,
+        "nodeDataList": [
+            {
+                "isEdgeNode": false,
+                "nodeColor": "",
+                "nodeType": 0,
+                "nodeMaterial": {
+                    "instanceID": 0
+                }
+            },
+            {
+                "isEdgeNode": false,
+                "nodeColor": "",
+                "nodeType": 0,
+                "nodeMaterial": {
+                    "instanceID": 0
+                }
+            },
+            {
+                "isEdgeNode": false,
+                "nodeColor": "",
+                "nodeType": 0,
+                "nodeMaterial": {
+                    "instanceID": 0
+                }
+            },
+            {
+                "isEdgeNode": true,
+                "nodeColor": "#FF0000",
+                "nodeType": 1,
+                "nodeMaterial": {
+                    "instanceID": 0
+                }
+            },
+            {
+                "isEdgeNode": true,
+                "nodeColor": "#008200",
+                "nodeType": 2,
+                "nodeMaterial": {
+                    "instanceID": 0
+                }
+            },
+            {
+                "isEdgeNode": false,
+                "nodeColor": "#",
+                "nodeType": 0,
+                "nodeMaterial": {
+                    "instanceID": 0
+                }
+            },
+            {
+                "isEdgeNode": false,
+                "nodeColor": "",
+                "nodeType": 0,
+                "nodeMaterial": {
+                    "instanceID": 0
+                }
+            },
+            {
+                "isEdgeNode": true,
+                "nodeColor": "#1F00FF",
+                "nodeType": 3,
+                "nodeMaterial": {
+                    "instanceID": 0
+                }
+            },
+            {
+                "isEdgeNode": true,
+                "nodeColor": "#008200",
+                "nodeType": 3,
+                "nodeMaterial": {
+                    "instanceID": 0
+                }
+            },
+            {
+                "isEdgeNode": false,
+                "nodeColor": "",
+                "nodeType": 0,
+                "nodeMaterial": {
+                    "instanceID": 0
+                }
+            },
+            {
+                "isEdgeNode": true,
+                "nodeColor": "#FF0000",
+                "nodeType": 1,
+                "nodeMaterial": {
+                    "instanceID": 0
+                }
+            },
+            {
+                "isEdgeNode": false,
+                "nodeColor": "",
+                "nodeType": 0,
+                "nodeMaterial": {
+                    "instanceID": 0
+                }
+            },
+            {
+                "isEdgeNode": false,
+                "nodeColor": "",
+                "nodeType": 0,
+                "nodeMaterial": {
+                    "instanceID": 0
+                }
+            },
+            {
+                "isEdgeNode": false,
+                "nodeColor": "",
+                "nodeType": 0,
+                "nodeMaterial": {
+                    "instanceID": 0
+                }
+            },
+            {
+                "isEdgeNode": false,
+                "nodeColor": "",
+                "nodeType": 0,
+                "nodeMaterial": {
+                    "instanceID": 0
+                }
+            },
+            {
+                "isEdgeNode": true,
+                "nodeColor": "#FF7D00",
+                "nodeType": 4,
+                "nodeMaterial": {
+                    "instanceID": 0
+                }
+            },
+            {
+                "isEdgeNode": true,
+                "nodeColor": "#1F00FF",
+                "nodeType": 3,
+                "nodeMaterial": {
+                    "instanceID": 0
+                }
+            },
+            {
+                "isEdgeNode": false,
+                "nodeColor": "#EFEF02",
+                "nodeType": 4,
+                "nodeMaterial": {
+                    "instanceID": 0
+                }
+            },
+            {
+                "isEdgeNode": true,
+                "nodeColor": "#EFEF02",
+                "nodeType": 5,
+                "nodeMaterial": {
+                    "instanceID": 0
+                }
+            },
+            {
+                "isEdgeNode": true,
+                "nodeColor": "#FF7D00",
+                "nodeType": 4,
+                "nodeMaterial": {
+                    "instanceID": 0
+                }
+            },
+            {
+                "isEdgeNode": false,
+                "nodeColor": "",
+                "nodeType": 0,
+                "nodeMaterial": {
+                    "instanceID": 0
+                }
+            },
+            {
+                "isEdgeNode": false,
+                "nodeColor": "#FF0000",
+                "nodeType": 1,
+                "nodeMaterial": {
+                    "instanceID": 0
+                }
+            },
+            {
+                "isEdgeNode": false,
+                "nodeColor": "",
+                "nodeType": 0,
+                "nodeMaterial": {
+                    "instanceID": 0
+                }
+            },
+            {
+                "isEdgeNode": false,
+                "nodeColor": "#EFEF02",
+                "nodeType": 4,
+                "nodeMaterial": {
+                    "instanceID": 0
+                }
+            },
+            {
+                "isEdgeNode": true,
+                "nodeColor": "#EFEF02",
+                "nodeType": 5,
+                "nodeMaterial": {
+                    "instanceID": 0
+                }
+            }
+        ]
+    },
+    {
+        "gridWidth": 5,
+        "gridHeight": 5,
+        "nodeDataList": [
+            {
+                "isEdgeNode": false,
+                "nodeColor": null,
+                "nodeType": "MAX"
+            },
+            {
+                "isEdgeNode": false,
+                "nodeColor": null,
+                "nodeType": "MAX"
+            },
+            {
+                "isEdgeNode": false,
+                "nodeColor": null,
+                "nodeType": "MAX"
+            },
+            {
+                "isEdgeNode": false,
+                "nodeColor": null,
+                "nodeType": "MAX"
+            },
+            {
+                "isEdgeNode": false,
+                "nodeColor": null,
+                "nodeType": "MAX"
+            },
+            {
+                "isEdgeNode": true,
+                "nodeColor": "#FF7D00",
+                "nodeType": "ORANGE"
+            },
+            {
+                "isEdgeNode": false,
+                "nodeColor": null,
+                "nodeType": "MAX"
+            },
+            {
+                "isEdgeNode": false,
+                "nodeColor": null,
+                "nodeType": "MAX"
+            },
+            {
+                "isEdgeNode": false,
+                "nodeColor": null,
+                "nodeType": "MAX"
+            },
+            {
+                "isEdgeNode": false,
+                "nodeColor": null,
+                "nodeType": "MAX"
+            },
+            {
+                "isEdgeNode": false,
+                "nodeColor": null,
+                "nodeType": "MAX"
+            },
+            {
+                "isEdgeNode": false,
+                "nodeColor": null,
+                "nodeType": "MAX"
+            },
+            {
+                "isEdgeNode": false,
+                "nodeColor": null,
+                "nodeType": "MAX"
+            },
+            {
+                "isEdgeNode": true,
+                "nodeColor": "#FF0000",
+                "nodeType": "RED"
+            },
+            {
+                "isEdgeNode": true,
+                "nodeColor": "#008200",
+                "nodeType": "GREEN"
+            },
+            {
+                "isEdgeNode": true,
+                "nodeColor": "#1F00FF",
+                "nodeType": "BLUE"
+            },
+            {
+                "isEdgeNode": false,
+                "nodeColor": null,
+                "nodeType": "MAX"
+            },
+            {
+                "isEdgeNode": false,
+                "nodeColor": null,
+                "nodeType": "MAX"
+            },
+            {
+                "isEdgeNode": false,
+                "nodeColor": null,
+                "nodeType": "MAX"
+            },
+            {
+                "isEdgeNode": false,
+                "nodeColor": null,
+                "nodeType": "MAX"
+            },
+            {
+                "isEdgeNode": false,
+                "nodeColor": null,
+                "nodeType": "MAX"
+            },
+            {
+                "isEdgeNode": false,
+                "nodeColor": null,
+                "nodeType": "MAX"
+            },
+            {
+                "isEdgeNode": false,
+                "nodeColor": null,
+                "nodeType": "MAX"
+            },
+            {
+                "isEdgeNode": false,
+                "nodeColor": null,
+                "nodeType": "MAX"
+            },
+            {
+                "isEdgeNode": false,
+                "nodeColor": null,
+                "nodeType": "MAX"
+            }
+        ]
+    },
+    {
+        "gridWidth": 5,
+        "gridHeight": 5,
+        "nodeDataList": [
+            {
+                "isEdgeNode": false,
+                "nodeColor": null,
+                "nodeType": "MAX"
+            },
+            {
+                "isEdgeNode": false,
+                "nodeColor": null,
+                "nodeType": "MAX"
+            },
+            {
+                "isEdgeNode": true,
+                "nodeColor": "#FF7D00",
+                "nodeType": "ORANGE"
+            },
+            {
+                "isEdgeNode": false,
+                "nodeColor": null,
+                "nodeType": "MAX"
+            },
+            {
+                "isEdgeNode": false,
+                "nodeColor": null,
+                "nodeType": "MAX"
+            },
+            {
+                "isEdgeNode": false,
+                "nodeColor": null,
+                "nodeType": "MAX"
+            },
+            {
+                "isEdgeNode": false,
+                "nodeColor": null,
+                "nodeType": "MAX"
+            },
+            {
+                "isEdgeNode": false,
+                "nodeColor": null,
+                "nodeType": "MAX"
+            },
+            {
+                "isEdgeNode": true,
+                "nodeColor": "#EFEF02",
+                "nodeType": "YELLOW"
+            },
+            {
+                "isEdgeNode": true,
+                "nodeColor": "#1F00FF",
+                "nodeType": "BLUE"
+            },
+            {
+                "isEdgeNode": false,
+                "nodeColor": null,
+                "nodeType": "MAX"
+            },
+            {
+                "isEdgeNode": false,
+                "nodeColor": null,
+                "nodeType": "MAX"
+            },
+            {
+                "isEdgeNode": false,
+                "nodeColor": null,
+                "nodeType": "MAX"
+            },
+            {
+                "isEdgeNode": true,
+                "nodeColor": "#EFEF02",
+                "nodeType": "YELLOW"
+            },
+            {
+                "isEdgeNode": false,
+                "nodeColor": null,
+                "nodeType": "MAX"
+            },
+            {
+                "isEdgeNode": true,
+                "nodeColor": "#FF7D00",
+                "nodeType": "ORANGE"
+            },
+            {
+                "isEdgeNode": true,
+                "nodeColor": "#1F00FF",
+                "nodeType": "BLUE"
+            },
+            {
+                "isEdgeNode": true,
+                "nodeColor": "#FF7D00",
+                "nodeType": "ORANGE"
+            },
+            {
+                "isEdgeNode": true,
+                "nodeColor": "#FF0000",
+                "nodeType": "RED"
+            },
+            {
+                "isEdgeNode": true,
+                "nodeColor": "#FF7D00",
+                "nodeType": "ORANGE"
+            },
+            {
+                "isEdgeNode": true,
+                "nodeColor": "#1F00FF",
+                "nodeType": "BLUE"
+            },
+            {
+                "isEdgeNode": true,
+                "nodeColor": "#FF0000",
+                "nodeType": "RED"
+            },
+            {
+                "isEdgeNode": true,
+                "nodeColor": "#008200",
+                "nodeType": "GREEN"
+            },
+            {
+                "isEdgeNode": true,
+                "nodeColor": "#008200",
+                "nodeType": "GREEN"
+            },
+            {
+                "isEdgeNode": true,
+                "nodeColor": "#FF0000",
+                "nodeType": "RED"
+            }
+        ]
+    },
+    {
+        "gridWidth": 5,
+        "gridHeight": 5,
+        "nodeDataList": [
+            {
+                "isEdgeNode": true,
+                "nodeColor": "#1F00FF",
+                "nodeType": "BLUE"
+            },
+            {
+                "isEdgeNode": true,
+                "nodeColor": "#1F00FF",
+                "nodeType": "BLUE"
+            },
+            {
+                "isEdgeNode": false,
+                "nodeColor": null,
+                "nodeType": "MAX"
+            },
+            {
+                "isEdgeNode": false,
+                "nodeColor": null,
+                "nodeType": "MAX"
+            },
+            {
+                "isEdgeNode": true,
+                "nodeColor": "#FF0000",
+                "nodeType": "RED"
+            },
+            {
+                "isEdgeNode": false,
+                "nodeColor": null,
+                "nodeType": "MAX"
+            },
+            {
+                "isEdgeNode": true,
+                "nodeColor": "#EFEF02",
+                "nodeType": "YELLOW"
+            },
+            {
+                "isEdgeNode": true,
+                "nodeColor": "#1F00FF",
+                "nodeType": "BLUE"
+            },
+            {
+                "isEdgeNode": false,
+                "nodeColor": null,
+                "nodeType": "MAX"
+            },
+            {
+                "isEdgeNode": true,
+                "nodeColor": "#FF7D00",
+                "nodeType": "ORANGE"
+            },
+            {
+                "isEdgeNode": false,
+                "nodeColor": null,
+                "nodeType": "MAX"
+            },
+            {
+                "isEdgeNode": true,
+                "nodeColor": "#008200",
+                "nodeType": "GREEN"
+            },
+            {
+                "isEdgeNode": false,
+                "nodeColor": null,
+                "nodeType": "MAX"
+            },
+            {
+                "isEdgeNode": false,
+                "nodeColor": null,
+                "nodeType": "MAX"
+            },
+            {
+                "isEdgeNode": false,
+                "nodeColor": null,
+                "nodeType": "MAX"
+            },
+            {
+                "isEdgeNode": false,
+                "nodeColor": null,
+                "nodeType": "MAX"
+            },
+            {
+                "isEdgeNode": false,
+                "nodeColor": null,
+                "nodeType": "MAX"
+            },
+            {
+                "isEdgeNode": false,
+                "nodeColor": null,
+                "nodeType": "MAX"
+            },
+            {
+                "isEdgeNode": true,
+                "nodeColor": "#FF0000",
+                "nodeType": "RED"
+            },
+            {
+                "isEdgeNode": false,
+                "nodeColor": null,
+                "nodeType": "MAX"
+            },
+            {
+                "isEdgeNode": true,
+                "nodeColor": "#EFEF02",
+                "nodeType": "YELLOW"
+            },
+            {
+                "isEdgeNode": true,
+                "nodeColor": "#1F00FF",
+                "nodeType": "BLUE"
+            },
+            {
+                "isEdgeNode": false,
+                "nodeColor": null,
+                "nodeType": "MAX"
+            },
+            {
+                "isEdgeNode": false,
+                "nodeColor": null,
+                "nodeType": "MAX"
+            },
+            {
+                "isEdgeNode": false,
+                "nodeColor": null,
+                "nodeType": "MAX"
+            }
+        ]
+    },
+    {
+        "gridWidth": 5,
+        "gridHeight": 5,
+        "nodeDataList": [
+            {
+                "isEdgeNode": false,
+                "nodeColor": null,
+                "nodeType": "MAX"
+            },
+            {
+                "isEdgeNode": false,
+                "nodeColor": null,
+                "nodeType": "MAX"
+            },
+            {
+                "isEdgeNode": false,
+                "nodeColor": null,
+                "nodeType": "MAX"
+            },
+            {
+                "isEdgeNode": true,
+                "nodeColor": "#FF7D00",
+                "nodeType": "ORANGE"
+            },
+            {
+                "isEdgeNode": false,
+                "nodeColor": null,
+                "nodeType": "MAX"
+            },
+            {
+                "isEdgeNode": true,
+                "nodeColor": "#FF7D00",
+                "nodeType": "ORANGE"
+            },
+            {
+                "isEdgeNode": false,
+                "nodeColor": null,
+                "nodeType": "MAX"
+            },
+            {
+                "isEdgeNode": false,
+                "nodeColor": null,
+                "nodeType": "MAX"
+            },
+            {
+                "isEdgeNode": false,
+                "nodeColor": null,
+                "nodeType": "MAX"
+            },
+            {
+                "isEdgeNode": true,
+                "nodeColor": "#EFEF02",
+                "nodeType": "YELLOW"
+            },
+            {
+                "isEdgeNode": true,
+                "nodeColor": "#008200",
+                "nodeType": "GREEN"
+            },
+            {
+                "isEdgeNode": false,
+                "nodeColor": null,
+                "nodeType": "MAX"
+            },
+            {
+                "isEdgeNode": false,
+                "nodeColor": null,
+                "nodeType": "MAX"
+            },
+            {
+                "isEdgeNode": true,
+                "nodeColor": "#FF0000",
+                "nodeType": "RED"
+            },
+            {
+                "isEdgeNode": false,
+                "nodeColor": null,
+                "nodeType": "MAX"
+            },
+            {
+                "isEdgeNode": true,
+                "nodeColor": "#FF7D00",
+                "nodeType": "ORANGE"
+            },
+            {
+                "isEdgeNode": true,
+                "nodeColor": "#FF0000",
+                "nodeType": "RED"
+            },
+            {
+                "isEdgeNode": false,
+                "nodeColor": null,
+                "nodeType": "MAX"
+            },
+            {
+                "isEdgeNode": false,
+                "nodeColor": null,
+                "nodeType": "MAX"
+            },
+            {
+                "isEdgeNode": false,
+                "nodeColor": null,
+                "nodeType": "MAX"
+            },
+            {
+                "isEdgeNode": false,
+                "nodeColor": null,
+                "nodeType": "MAX"
+            },
+            {
+                "isEdgeNode": false,
+                "nodeColor": null,
+                "nodeType": "MAX"
+            },
+            {
+                "isEdgeNode": false,
+                "nodeColor": null,
+                "nodeType": "MAX"
+            },
+            {
+                "isEdgeNode": false,
+                "nodeColor": null,
+                "nodeType": "MAX"
+            },
+            {
+                "isEdgeNode": true,
+                "nodeColor": "#008200",
+                "nodeType": "GREEN"
+            }
+        ]
+    },
+    {
+        "gridWidth": 5,
+        "gridHeight": 5,
+        "nodeDataList": [
+            {
+                "isEdgeNode": false,
+                "nodeColor": null,
+                "nodeType": "MAX"
+            },
+            {
+                "isEdgeNode": true,
+                "nodeColor": "#FF0000",
+                "nodeType": "RED"
+            },
+            {
+                "isEdgeNode": false,
+                "nodeColor": null,
+                "nodeType": "MAX"
+            },
+            {
+                "isEdgeNode": false,
+                "nodeColor": null,
+                "nodeType": "MAX"
+            },
+            {
+                "isEdgeNode": false,
+                "nodeColor": null,
+                "nodeType": "MAX"
+            },
+            {
+                "isEdgeNode": false,
+                "nodeColor": null,
+                "nodeType": "MAX"
+            },
+            {
+                "isEdgeNode": false,
+                "nodeColor": null,
+                "nodeType": "MAX"
+            },
+            {
+                "isEdgeNode": true,
+                "nodeColor": "#EFEF02",
+                "nodeType": "YELLOW"
+            },
+            {
+                "isEdgeNode": false,
+                "nodeColor": null,
+                "nodeType": "MAX"
+            },
+            {
+                "isEdgeNode": false,
+                "nodeColor": null,
+                "nodeType": "MAX"
+            },
+            {
+                "isEdgeNode": false,
+                "nodeColor": null,
+                "nodeType": "MAX"
+            },
+            {
+                "isEdgeNode": false,
+                "nodeColor": null,
+                "nodeType": "MAX"
+            },
+            {
+                "isEdgeNode": false,
+                "nodeColor": null,
+                "nodeType": "MAX"
+            },
+            {
+                "isEdgeNode": false,
+                "nodeColor": null,
+                "nodeType": "MAX"
+            },
+            {
+                "isEdgeNode": true,
+                "nodeColor": "#EFEF02",
+                "nodeType": "YELLOW"
+            },
+            {
+                "isEdgeNode": false,
+                "nodeColor": null,
+                "nodeType": "MAX"
+            },
+            {
+                "isEdgeNode": false,
+                "nodeColor": null,
+                "nodeType": "MAX"
+            },
+            {
+                "isEdgeNode": false,
+                "nodeColor": null,
+                "nodeType": "MAX"
+            },
+            {
+                "isEdgeNode": true,
+                "nodeColor": "#FF7D00",
+                "nodeType": "ORANGE"
+            },
+            {
+                "isEdgeNode": false,
+                "nodeColor": null,
+                "nodeType": "MAX"
+            },
+            {
+                "isEdgeNode": true,
+                "nodeColor": "#1F00FF",
+                "nodeType": "BLUE"
+            },
+            {
+                "isEdgeNode": false,
+                "nodeColor": null,
+                "nodeType": "MAX"
+            },
+            {
+                "isEdgeNode": false,
+                "nodeColor": null,
+                "nodeType": "MAX"
+            },
+            {
+                "isEdgeNode": false,
+                "nodeColor": null,
+                "nodeType": "MAX"
+            },
+            {
+                "isEdgeNode": false,
+                "nodeColor": null,
+                "nodeType": "MAX"
+            }
+        ]
+    },
+    {
+        "gridWidth": 5,
+        "gridHeight": 5,
+        "nodeDataList": [
+            {
+                "isEdgeNode": true,
+                "nodeColor": "#008200",
+                "nodeType": "GREEN"
+            },
+            {
+                "isEdgeNode": false,
+                "nodeColor": null,
+                "nodeType": "MAX"
+            },
+            {
+                "isEdgeNode": false,
+                "nodeColor": null,
+                "nodeType": "MAX"
+            },
+            {
+                "isEdgeNode": false,
+                "nodeColor": null,
+                "nodeType": "MAX"
+            },
+            {
+                "isEdgeNode": false,
+                "nodeColor": null,
+                "nodeType": "MAX"
+            },
+            {
+                "isEdgeNode": true,
+                "nodeColor": "#008200",
+                "nodeType": "GREEN"
+            },
+            {
+                "isEdgeNode": false,
+                "nodeColor": null,
+                "nodeType": "MAX"
+            },
+            {
+                "isEdgeNode": true,
+                "nodeColor": "#008200",
+                "nodeType": "GREEN"
+            },
+            {
+                "isEdgeNode": true,
+                "nodeColor": "#1F00FF",
+                "nodeType": "BLUE"
+            },
+            {
+                "isEdgeNode": true,
+                "nodeColor": "#008200",
+                "nodeType": "GREEN"
+            },
+            {
+                "isEdgeNode": false,
+                "nodeColor": null,
+                "nodeType": "MAX"
+            },
+            {
+                "isEdgeNode": false,
+                "nodeColor": null,
+                "nodeType": "MAX"
+            },
+            {
+                "isEdgeNode": true,
+                "nodeColor": "#FF0000",
+                "nodeType": "RED"
+            },
+            {
+                "isEdgeNode": false,
+                "nodeColor": null,
+                "nodeType": "MAX"
+            },
+            {
+                "isEdgeNode": false,
+                "nodeColor": null,
+                "nodeType": "MAX"
+            },
+            {
+                "isEdgeNode": true,
+                "nodeColor": "#FF0000",
+                "nodeType": "RED"
+            },
+            {
+                "isEdgeNode": false,
+                "nodeColor": null,
+                "nodeType": "MAX"
+            },
+            {
+                "isEdgeNode": true,
+                "nodeColor": "#008200",
+                "nodeType": "GREEN"
+            },
+            {
+                "isEdgeNode": false,
+                "nodeColor": null,
+                "nodeType": "MAX"
+            },
+            {
+                "isEdgeNode": true,
+                "nodeColor": "#FF7D00",
+                "nodeType": "ORANGE"
+            },
+            {
+                "isEdgeNode": false,
+                "nodeColor": null,
+                "nodeType": "MAX"
+            },
+            {
+                "isEdgeNode": false,
+                "nodeColor": null,
+                "nodeType": "MAX"
+            },
+            {
+                "isEdgeNode": false,
+                "nodeColor": null,
+                "nodeType": "MAX"
+            },
+            {
+                "isEdgeNode": false,
+                "nodeColor": null,
+                "nodeType": "MAX"
+            },
+            {
+                "isEdgeNode": true,
+                "nodeColor": "#EFEF02",
+                "nodeType": "YELLOW"
+            }
+        ]
+    },
+    {
+        "gridWidth": 5,
+        "gridHeight": 5,
+        "nodeDataList": [
+            {
+                "isEdgeNode": false,
+                "nodeColor": null,
+                "nodeType": "MAX"
+            },
+            {
+                "isEdgeNode": true,
+                "nodeColor": "#EFEF02",
+                "nodeType": "YELLOW"
+            },
+            {
+                "isEdgeNode": false,
+                "nodeColor": null,
+                "nodeType": "MAX"
+            },
+            {
+                "isEdgeNode": false,
+                "nodeColor": null,
+                "nodeType": "MAX"
+            },
+            {
+                "isEdgeNode": false,
+                "nodeColor": null,
+                "nodeType": "MAX"
+            },
+            {
+                "isEdgeNode": false,
+                "nodeColor": null,
+                "nodeType": "MAX"
+            },
+            {
+                "isEdgeNode": false,
+                "nodeColor": null,
+                "nodeType": "MAX"
+            },
+            {
+                "isEdgeNode": false,
+                "nodeColor": null,
+                "nodeType": "MAX"
+            },
+            {
+                "isEdgeNode": false,
+                "nodeColor": null,
+                "nodeType": "MAX"
+            },
+            {
+                "isEdgeNode": true,
+                "nodeColor": "#EFEF02",
+                "nodeType": "YELLOW"
+            },
+            {
+                "isEdgeNode": false,
+                "nodeColor": null,
+                "nodeType": "MAX"
+            },
+            {
+                "isEdgeNode": false,
+                "nodeColor": null,
+                "nodeType": "MAX"
+            },
+            {
+                "isEdgeNode": true,
+                "nodeColor": "#FF0000",
+                "nodeType": "RED"
+            },
+            {
+                "isEdgeNode": false,
+                "nodeColor": null,
+                "nodeType": "MAX"
+            },
+            {
+                "isEdgeNode": false,
+                "nodeColor": null,
+                "nodeType": "MAX"
+            },
+            {
+                "isEdgeNode": false,
+                "nodeColor": null,
+                "nodeType": "MAX"
+            },
+            {
+                "isEdgeNode": false,
+                "nodeColor": null,
+                "nodeType": "MAX"
+            },
+            {
+                "isEdgeNode": false,
+                "nodeColor": null,
+                "nodeType": "MAX"
+            },
+            {
+                "isEdgeNode": false,
+                "nodeColor": null,
+                "nodeType": "MAX"
+            },
+            {
+                "isEdgeNode": false,
+                "nodeColor": null,
+                "nodeType": "MAX"
+            },
+            {
+                "isEdgeNode": true,
+                "nodeColor": "#EFEF02",
+                "nodeType": "YELLOW"
+            },
+            {
+                "isEdgeNode": true,
+                "nodeColor": "#1F00FF",
+                "nodeType": "BLUE"
+            },
+            {
+                "isEdgeNode": false,
+                "nodeColor": null,
+                "nodeType": "MAX"
+            },
+            {
+                "isEdgeNode": true,
+                "nodeColor": "#008200",
+                "nodeType": "GREEN"
+            },
+            {
+                "isEdgeNode": false,
+                "nodeColor": null,
+                "nodeType": "MAX"
+            }
+        ]
+    },
+    {
+        "gridWidth": 5,
+        "gridHeight": 5,
+        "nodeDataList": [
+            {
+                "isEdgeNode": true,
+                "nodeColor": "#FF0000",
+                "nodeType": "RED"
+            },
+            {
+                "isEdgeNode": false,
+                "nodeColor": null,
+                "nodeType": "MAX"
+            },
+            {
+                "isEdgeNode": true,
+                "nodeColor": "#FF7D00",
+                "nodeType": "ORANGE"
+            },
+            {
+                "isEdgeNode": false,
+                "nodeColor": null,
+                "nodeType": "MAX"
+            },
+            {
+                "isEdgeNode": false,
+                "nodeColor": null,
+                "nodeType": "MAX"
+            },
+            {
+                "isEdgeNode": false,
+                "nodeColor": null,
+                "nodeType": "MAX"
+            },
+            {
+                "isEdgeNode": false,
+                "nodeColor": null,
+                "nodeType": "MAX"
+            },
+            {
+                "isEdgeNode": true,
+                "nodeColor": "#1F00FF",
+                "nodeType": "BLUE"
+            },
+            {
+                "isEdgeNode": false,
+                "nodeColor": null,
+                "nodeType": "MAX"
+            },
+            {
+                "isEdgeNode": true,
+                "nodeColor": "#1F00FF",
+                "nodeType": "BLUE"
+            },
+            {
+                "isEdgeNode": false,
+                "nodeColor": null,
+                "nodeType": "MAX"
+            },
+            {
+                "isEdgeNode": false,
+                "nodeColor": null,
+                "nodeType": "MAX"
+            },
+            {
+                "isEdgeNode": true,
+                "nodeColor": "#FF7D00",
+                "nodeType": "ORANGE"
+            },
+            {
+                "isEdgeNode": false,
+                "nodeColor": null,
+                "nodeType": "MAX"
+            },
+            {
+                "isEdgeNode": false,
+                "nodeColor": null,
+                "nodeType": "MAX"
+            },
+            {
+                "isEdgeNode": false,
+                "nodeColor": null,
+                "nodeType": "MAX"
+            },
+            {
+                "isEdgeNode": false,
+                "nodeColor": null,
+                "nodeType": "MAX"
+            },
+            {
+                "isEdgeNode": true,
+                "nodeColor": "#EFEF02",
+                "nodeType": "YELLOW"
+            },
+            {
+                "isEdgeNode": false,
+                "nodeColor": null,
+                "nodeType": "MAX"
+            },
+            {
+                "isEdgeNode": false,
+                "nodeColor": null,
+                "nodeType": "MAX"
+            },
+            {
+                "isEdgeNode": true,
+                "nodeColor": "#EFEF02",
+                "nodeType": "YELLOW"
+            },
+            {
+                "isEdgeNode": false,
+                "nodeColor": null,
+                "nodeType": "MAX"
+            },
+            {
+                "isEdgeNode": false,
+                "nodeColor": null,
+                "nodeType": "MAX"
+            },
+            {
+                "isEdgeNode": true,
+                "nodeColor": "#008200",
+                "nodeType": "GREEN"
+            },
+            {
+                "isEdgeNode": false,
+                "nodeColor": null,
+                "nodeType": "MAX"
+            }
+        ]
+    },
+    {
+        "gridWidth": 5,
+        "gridHeight": 5,
+        "nodeDataList": [
+            {
+                "isEdgeNode": true,
+                "nodeColor": "#008200",
+                "nodeType": "GREEN"
+            },
+            {
+                "isEdgeNode": false,
+                "nodeColor": null,
+                "nodeType": "MAX"
+            },
+            {
+                "isEdgeNode": false,
+                "nodeColor": null,
+                "nodeType": "MAX"
+            },
+            {
+                "isEdgeNode": false,
+                "nodeColor": null,
+                "nodeType": "MAX"
+            },
+            {
+                "isEdgeNode": false,
+                "nodeColor": null,
+                "nodeType": "MAX"
+            },
+            {
+                "isEdgeNode": true,
+                "nodeColor": "#EFEF02",
+                "nodeType": "YELLOW"
+            },
+            {
+                "isEdgeNode": true,
+                "nodeColor": "#008200",
+                "nodeType": "GREEN"
+            },
+            {
+                "isEdgeNode": false,
+                "nodeColor": null,
+                "nodeType": "MAX"
+            },
+            {
+                "isEdgeNode": false,
+                "nodeColor": null,
+                "nodeType": "MAX"
+            },
+            {
+                "isEdgeNode": true,
+                "nodeColor": "#008200",
+                "nodeType": "GREEN"
+            },
+            {
+                "isEdgeNode": true,
+                "nodeColor": "#FF0000",
+                "nodeType": "RED"
+            },
+            {
+                "isEdgeNode": false,
+                "nodeColor": null,
+                "nodeType": "MAX"
+            },
+            {
+                "isEdgeNode": true,
+                "nodeColor": "#1F00FF",
+                "nodeType": "BLUE"
+            },
+            {
+                "isEdgeNode": true,
+                "nodeColor": "#008200",
+                "nodeType": "GREEN"
+            },
+            {
+                "isEdgeNode": false,
+                "nodeColor": null,
+                "nodeType": "MAX"
+            },
+            {
+                "isEdgeNode": false,
+                "nodeColor": null,
+                "nodeType": "MAX"
+            },
+            {
+                "isEdgeNode": false,
+                "nodeColor": null,
+                "nodeType": "MAX"
+            },
+            {
+                "isEdgeNode": false,
+                "nodeColor": null,
+                "nodeType": "MAX"
+            },
+            {
+                "isEdgeNode": false,
+                "nodeColor": null,
+                "nodeType": "MAX"
+            },
+            {
+                "isEdgeNode": false,
+                "nodeColor": null,
+                "nodeType": "MAX"
+            },
+            {
+                "isEdgeNode": false,
+                "nodeColor": null,
+                "nodeType": "MAX"
+            },
+            {
+                "isEdgeNode": false,
+                "nodeColor": null,
+                "nodeType": "MAX"
+            },
+            {
+                "isEdgeNode": false,
+                "nodeColor": null,
+                "nodeType": "MAX"
+            },
+            {
+                "isEdgeNode": false,
+                "nodeColor": null,
+                "nodeType": "MAX"
+            },
+            {
+                "isEdgeNode": false,
+                "nodeColor": null,
+                "nodeType": "MAX"
+            }
+        ]
+    }
+]

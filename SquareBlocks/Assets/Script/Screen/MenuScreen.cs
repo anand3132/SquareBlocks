@@ -76,12 +76,6 @@ namespace SquareBlock
 
         }
 
-        public void OnGenerateTestData()
-        {
-           GameData gdata= GameDataGenerator.Instance.GenerateGameData();
-
-            ListenerController.Instance.DispatchEvent("UpdateGameData", gdata);
-        }
         public void BackButtonOnClick()
         {
             UIController.Instance.BackToPastScreen();

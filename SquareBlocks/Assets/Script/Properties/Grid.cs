@@ -1,4 +1,5 @@
-﻿using System.Collections;
+﻿using DG.Tweening;
+using System.Collections;
 using System.Collections.Generic;
 using System.Linq;
 using UnityEngine;
@@ -7,7 +8,7 @@ using UnityEngine.UI;
 
 namespace SquareBlock {
 
-    public class Grid : IController
+    public class Grid : IProprties
     {
         private GameObject CellObjects;
         private int GColumn;
@@ -17,8 +18,15 @@ namespace SquareBlock {
         private Dictionary<NodeType, Vector3[]> lineBucket = new Dictionary<NodeType, Vector3[]>();
         private void OnGameInitialize(GameData gameData)
         {
+            ClearAllGridCells();
+            GColumn = gameData.gridHeight;
+            GRow = gameData.gridWidth;
+            GNodeData = gameData.nodeDataList;
+        }
+        private void ClearAllGridCells()
+        {
             childs = this.GetComponentsInChildren<Transform>(true)
-                .Where(x => x.gameObject.transform.parent != transform.parent).ToArray();
+     .Where(x => x.gameObject.transform.parent != transform.parent).ToArray();
             if (childs != null)
             {
                 foreach (Transform item in childs)
@@ -26,18 +34,8 @@ namespace SquareBlock {
                     Destroy(item.gameObject);
                 }
             }
-
-            //forward allocation
-            for (int x=(int)NodeType.RED;x<=(int)NodeType.ORANGE;x++)
-            {
-                lineBucket.Add((NodeType)x, new Vector3[0]);
-            }
-
-
-            GColumn = gameData.gridHeight;
-            GRow = gameData.gridWidth;
-            GNodeData = gameData.nodeDataList;
         }
+
         private void PlotGrid(CellElements Cell)
         {
             int totalCell = GColumn * GRow;
@@ -86,10 +84,6 @@ namespace SquareBlock {
 
         }
 
-        private void AddPointToList(Vector3 pos)
-        {
-
-        }
         //------------------------------------------------------------------------------------------------
         //private void DrawLines(Vector3[] vertexPositions, LineRenderer lineRenderer)
         private void DrawLines(List<GameObject> currentEdgeList)
@@ -102,7 +96,8 @@ namespace SquareBlock {
             for (int i = 0; i < currentEdgeList.Count; i++)
             {
                 Node currentNode = currentEdgeList[i].GetComponent<Node>();
-                vertexPositions[i] = currentEdgeList[i].transform.GetChild(0).position;
+                vertexPositions[i] = currentEdgeList[i].transform.position;
+                vertexPositions[i].z -= 10;
                 currentNode.nodeStatus = startNode.nodeType;
                 currentEdgeList[i].GetComponent<Image>().color = startNode.GetComponent<Image>().color;
             }
@@ -130,6 +125,7 @@ namespace SquareBlock {
             ListenerController.Instance.RegisterObserver("OnDragBegin", this);
             ListenerController.Instance.RegisterObserver("OnDrag", this);
             ListenerController.Instance.RegisterObserver("OnDragEnd", this);
+            ListenerController.Instance.RegisterObserver("StopGame", this);
 
         }
 
@@ -141,6 +137,7 @@ namespace SquareBlock {
             ListenerController.Instance.UnRegisterObserver("OnDragBegin", this);
             ListenerController.Instance.UnRegisterObserver("OnDrag", this);
             ListenerController.Instance.UnRegisterObserver("OnDragEnd", this);
+            ListenerController.Instance.UnRegisterObserver("StopGame", this);
 
         }
         public List<GameObject> currentVectorList = new List<GameObject>();
@@ -170,12 +167,22 @@ namespace SquareBlock {
             {
                 GameObject obj = _eventData[0] as GameObject;
                 Node currentNode = obj.GetComponent<Node>();
-                if (currentNode.nodeStatus != NodeType.MAX)
+
+                float scaleSpeed = 0.2f;
+
+                var rect = currentNode.GetComponent<RectTransform>();
+                var sequence = DOTween.Sequence().Join(
+                                rect.DOPunchScale(new Vector3(0.5f, 0.5f, 0.5f), scaleSpeed, 2, 1f));
+                sequence.SetLoops(1, LoopType.Yoyo);
+
+                if (currentNode.nodeStatus != NodeType.MAX && currentNode.nodeStatus != currentVectorList[0].GetComponent<Node>().nodeType) 
                 {
                     currentVectorList.Clear();
                     Debug.Log("<color=red>Line Crossing.....!! </color>");
+                    ListenerController.Instance.DispatchEvent("TossMessage", "Line Crossing !!!");
                     return;
                 }
+
                 foreach (var item in currentVectorList)
                 {
                     if (item.GetComponent<Node>().nodeID == currentNode.nodeID)
@@ -189,18 +196,27 @@ namespace SquareBlock {
                 {
                     GameObject obj = _eventData[0] as GameObject;
                     Node currentNode = obj.GetComponent<Node>();
-                    if (openNode.nodeID != currentNode.nodeID && openNode.nodeType== currentNode.nodeType)
+                    if (openNode.nodeID != currentNode.nodeID && openNode.nodeType == currentNode.nodeType)
                     {
                         currentVectorList.Add(_eventData[0] as GameObject);
                         DrawLines(currentVectorList);
                     }
                     else
+                    {
                         currentVectorList.Clear();
+                    }
                 }
                 else
                 {
                     currentVectorList.Clear();
                 }
+            }
+            if (eventName == "StopGame")
+            {
+                lineBucket.Clear();
+                currentVectorList.Clear();
+                ClearAllGridCells();
+
             }
         }
     }

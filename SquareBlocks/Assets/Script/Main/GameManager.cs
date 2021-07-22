@@ -33,8 +33,8 @@ namespace SquareBlock {
                     return;
                 }
             }
-                GameData gdata = GameDataGenerator.Instance.GenerateGameData(3);
-                gdataList.Add(gdata);
+                gdataList = GameDataGenerator.Instance.GenerateGameDataList(10);
+
                 ListenerController.Instance.DispatchEvent("UpdateGameData", gdataList);
                 Debug.Log("<color=blue>--------------------------------</color>");
                 Debug.Log("<color=blue>Generating New Game Data</color>");
@@ -62,30 +62,11 @@ namespace SquareBlock {
             {
                 InitializeGameElements(_eventData[0] as GameData);
             }
-            if (eventName == "StopGame" && _eventData[0] != null)
-            {
-                if(AnalyzeGameStatus())
-                {
-                    UpdateLeaderBoard();
-                    ShowGameSelectionMenue();
-                }
-            }
+            if (eventName == "StopGame" )
+            {  }
         }
 
-        private void ShowGameSelectionMenue()
-        {
-            throw new NotImplementedException();
-        }
 
-        private void UpdateLeaderBoard()
-        {
-            throw new NotImplementedException();
-        }
-
-        private bool AnalyzeGameStatus()
-        {
-            throw new NotImplementedException();
-        }
 
         private void InitializeGameElements(GameData gameData)
         {

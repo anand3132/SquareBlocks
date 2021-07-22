@@ -46,30 +46,25 @@ namespace SquareBlock
 
         private static int gameDataGeneratorInstances = 0;
 
-        private GameData gameData;
         [SerializeField]
-        private List<GameData> gameDataList = new List<GameData>();
-        public GameData GenerateGameData(int count=1)
+        public List<GameData> GenerateGameDataList(int elements = 1)
         {
-            gameData = GameData.CreateGameData();
-            GetGameDataValues(gameData);
 
-            if (gameData != null)
+            List<GameData> gameDataList = new List<GameData>();
+            for (int i = 0; i < elements; i++)
             {
-                for (int i = 0; i < count; i++)
-                {
-                    gameDataList.Add(gameData);
-                }
-                string jstr=JsonParser.Serialize(typeof(List<GameData>), gameDataList);
-                JsonParser.Instance.WriteJsonData(jstr, "SquareBlockData");
-
-                Debug.Log("<color=blue> GameData is written To : </color>" + JsonParser.Instance.GetDefaultPath());
-
-                return gameData;
+                GameData gameData = GenerateGameData(new GameData());
+                gameDataList.Add(gameData);
             }
-            return null;
+            //Write game data list json to path
+
+            string jstr = JsonParser.Serialize(typeof(List<GameData>), gameDataList);
+            JsonParser.Instance.WriteJsonData(jstr, "SquareBlockData");
+            Debug.Log("<color=blue> GameData is written To : </color>" + JsonParser.Instance.GetDefaultPath());
+
+            return gameDataList;
         }
-        private void GetGameDataValues(GameData gameData)
+        private GameData GenerateGameData(GameData gameData)
         {
             gameData.gridHeight = 5;
             gameData.gridWidth = 5;
@@ -81,7 +76,6 @@ namespace SquareBlock
                 ,{NodeType.ORANGE,  "#FF7D00" }
                 ,{NodeType.YELLOW,  "#EFEF02" }
             };
-          //  string[] colorCodes = { "#FF0000", "#008200", "#1F00FF", "#FF7D00", "#EFEF02" };
 
             for (int i =0;i<(gameData.gridHeight * gameData.gridWidth); i++)
             {
@@ -97,7 +91,7 @@ namespace SquareBlock
                 ndata.nodeColor = colorCode;
                 gameData.nodeDataList.Add(ndata);
             }
-          //  Debug.Log("<color=blue> nodeDataList count:</color>" + gameData.nodeDataList.Count);
+            return gameData;
 
         }
     }

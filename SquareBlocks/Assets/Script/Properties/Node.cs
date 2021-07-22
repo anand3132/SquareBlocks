@@ -6,7 +6,7 @@ using UnityEngine;
 using DG.Tweening;
 
 namespace SquareBlock {
-    public class Node : IController,IBeginDragHandler,IDragHandler,IEndDragHandler
+    public class Node : IProprties,IBeginDragHandler,IDragHandler,IEndDragHandler
     {
         private Grid grid;
 

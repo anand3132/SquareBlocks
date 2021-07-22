@@ -33,20 +33,20 @@ namespace SquareBlock
     [System.Serializable]
     public class GameData
     {
-        private static int modelDataInstances = 0;
-        public static GameData CreateGameData()
-        {
-            if (modelDataInstances++ < 1)
-            {
-                return new GameData();
-            }
-            else
-            {
-                Debug.Log("<color=red> Cant Create More than one GameData Instance</color>");
-            }
-            return null;
-        }
-        protected GameData() { }
+        //private static int gameDataInstances = 0;
+        //public static GameData CreateGameData()
+        //{
+        //    if (gameDataInstances++ < 1)
+        //    {
+        //        return new GameData();
+        //    }
+        //    else
+        //    {
+        //        Debug.Log("<color=red> Cant Create More than one GameData Instance</color>");
+        //    }
+        //    return null;
+        //}
+        //protected GameData() { }
         public int gridWidth;
         public int gridHeight;
         public List<NodeData> nodeDataList;
