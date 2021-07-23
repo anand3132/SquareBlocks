@@ -183,7 +183,7 @@ namespace SquareBlock
         }
 
         public void ToastMsg(string _msg) {
-
+            Debug.Log("<color=#FFA500> MSG:: " + _msg + " ::</color>");
             ListenerController.Instance.DispatchEvent("TossMessage", _msg);
         }
         public void ToastMsg(string _msg, float toastStartDelay,float toastEndDelay,bool lockUI=false) {

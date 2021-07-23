@@ -64,13 +64,12 @@ namespace SquareBlock
                 NodeData ndata = new NodeData();
 
                 ndata.isEdgeNode = Random.Range(0,3)==1?true:false;
-                
-                
                 ndata.nodeType = ndata.isEdgeNode ? colorDic.Keys.ElementAt((int)Random.Range(0,colorDic.Keys.Count)) : NodeType.MAX;
                 
                 string colorCode = null;
                 colorDic.TryGetValue(ndata.nodeType, out colorCode);
                 ndata.nodeColor = colorCode;
+
                 gameData.nodeDataList.Add(ndata);
             }
             return gameData;

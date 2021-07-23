@@ -14,7 +14,7 @@ namespace SquareBlock {
         public Material lineMaterial;
 
         private CellElements cellElement = new CellElements();
-        public List<GameData> gdataList; //= new List<GameData>();
+        public List<GameData> gdataList=null; //= new List<GameData>();
 
 
         private  void Start() {
@@ -37,13 +37,14 @@ namespace SquareBlock {
         /// </summary>
         /// <returns></returns>
         public  List<GameData> CheckAndGetGameData() {
+
             string filePath = System.IO.Path.Combine(Application.persistentDataPath, "SquareBlockData.json");
 
             if (File.Exists(filePath)) {
                 string JSONstring = File.ReadAllText(filePath);
                 gdataList = JsonParser.Deserialize(typeof(List<GameData>), JSONstring) as List<GameData>;
             }
-            if (gdataList == null) {
+            if (gdataList == null|| gdataList.Count==0) {
                 gdataList = GameDataGenerator.Instance.GenerateGameDataList(10);
                 Debug.Log("<color=blue>--------------------------------</color>");
                 Debug.Log("<color=blue>Generating New Game Data</color>");
