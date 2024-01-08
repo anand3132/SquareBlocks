@@ -5,7 +5,7 @@ using System.Linq;
 using UnityEngine;
 using UnityEngine.EventSystems;
 using UnityEngine.UI;
-
+//this is a test comment from main branch
 namespace SquareBlock {
 
     public class Grid : IProperties
